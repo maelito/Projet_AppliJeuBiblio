@@ -46,7 +46,7 @@ public class Memory extends AppCompatActivity {
     int clic1, clic2;
     int nbCarte = 1;
 
-    private Button btnRetour, btnReinitialiser;
+    private Button btnRetour, btnReinitialiser, btnRegles;
 
     //private String leTheme ,lePseudo ;
 
@@ -279,6 +279,16 @@ public class Memory extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Memory.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        //bouton du rappel des règles
+        btnRegles.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Regles.class);
                 startActivity(intent);
                 finish();
             }
