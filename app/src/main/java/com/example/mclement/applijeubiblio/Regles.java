@@ -25,13 +25,6 @@ public class Regles extends AppCompatActivity {
                 "\n \n Le jeu s'arrête quand tu as trouvé toutes les paires !";
 
         regles.setText(txtRegles);
-        //Regles();
     }
-
-    private void Regles()
-    {
-
-    }
-
 
 }
