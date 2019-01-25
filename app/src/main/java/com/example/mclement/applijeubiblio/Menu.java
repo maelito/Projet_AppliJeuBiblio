@@ -6,7 +6,6 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -29,15 +28,15 @@ public class Menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if ( pseudo == "")
+                if ( pseudo == "") //on empeche le joueur de jouer si il n'a pas rentré de pseudo
                 {
-                    //On affiche une boite de dialogue annonçant que le nom n'as pas été rentré
+                    //On affiche une boite de dialogue annonçant que le pseudo n'as pas été rentré
                     AlertDialog.Builder alertDialogBuilder1 = new AlertDialog.Builder(Menu.this);
                     alertDialogBuilder1
                             .setMessage("Rentre un pseudo !")
                             //empêche l'annulation
                             .setCancelable(false)
-                            //on recommence une partie
+                            //on reviens au menu
                             .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int i) {
@@ -47,7 +46,20 @@ public class Menu extends AppCompatActivity {
                                 }
                             });
                 }
+                else
+                { //on lance le jeu du mémory
+                    btnMemory.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(getApplicationContext(), Memory.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    });
+                }
             }
         });
+
+
     }
 }
