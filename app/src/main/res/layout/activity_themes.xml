@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_fr_2">
+
+    <TextView
+        android:id="@+id/txtChoixTheme"
+        android:layout_width="739dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text='Choisi ton thème "pseudo" !'
+        android:textAlignment="center"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.051" />
+
+    <ImageView
+        android:id="@+id/imgViewTheme1"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="350dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/tintin" />
+
+    <ImageView
+        android:id="@+id/imgViewTheme2"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="350dp"
+        app:layout_constraintStart_toEndOf="@+id/imgViewTheme1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/titeuf" />
+
+    <ImageView
+        android:id="@+id/imgViewTheme3"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginEnd="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgViewTheme2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/simpson" />
+
+    <ImageView
+        android:id="@+id/imgViewTheme4"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="120dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgViewTheme1"
+        app:srcCompat="@drawable/naruto" />
+
+    <ImageView
+        android:id="@+id/imgViewTheme5"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="120dp"
+        app:layout_constraintStart_toEndOf="@+id/imgViewTheme4"
+        app:layout_constraintTop_toBottomOf="@+id/imgViewTheme2"
+        app:srcCompat="@drawable/onepiece" />
+
+    <ImageView
+        android:id="@+id/imgViewTheme6"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgViewTheme5"
+        app:layout_constraintTop_toBottomOf="@+id/imgViewTheme3"
+        app:srcCompat="@drawable/fairytail" />
+
+    <ImageView
+        android:id="@+id/imgViewTheme7"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgViewTheme4"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/spiderman" />
+
+    <ImageView
+        android:id="@+id/imgViewTheme8"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgViewTheme7"
+        app:layout_constraintTop_toBottomOf="@+id/imgViewTheme5"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/avengers" />
+
+    <ImageView
+        android:id="@+id/imgViewTheme9"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imgViewTheme8"
+        app:layout_constraintTop_toBottomOf="@+id/imgViewTheme6"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/superman" />
+
+</android.support.constraint.ConstraintLayout>
