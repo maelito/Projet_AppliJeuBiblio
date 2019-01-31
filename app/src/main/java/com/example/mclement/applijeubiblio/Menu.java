@@ -12,6 +12,7 @@ import android.widget.EditText;
 public class Menu extends AppCompatActivity {
 
     private Button btnMemory;
+    private Button btnRegles;
     private EditText edtTxtPseudo;
     private String pseudo;
 
@@ -22,6 +23,8 @@ public class Menu extends AppCompatActivity {
 
         edtTxtPseudo = (EditText) findViewById(R.id.EdtTxtPseudo);
         pseudo = edtTxtPseudo.getText().toString();
+        btnMemory = (Button) findViewById(R.id.btnJeu2);
+        btnRegles = (Button) findViewById(R.id.btnRegles);
 
 
         btnMemory.setOnClickListener(new View.OnClickListener() {
@@ -51,15 +54,22 @@ public class Menu extends AppCompatActivity {
                     btnMemory.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Intent intent = new Intent(getApplicationContext(), Memory.class);
-                            startActivity(intent);
-                            finish();
+                            //Intent intent = new Intent(getApplicationContext(), Memory.class);
+                            startActivity(new Intent(Menu.this, Memory.class));
+                            //finish();
                         }
                     });
                 }
             }
         });
 
-
+        btnRegles.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(getApplicationContext(), Regles.class);
+                startActivity(new Intent(Menu.this, Memory.class));
+                //finish();
+            }
+        });
     }
 }

@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class Regles extends AppCompatActivity {
+    
+    
+    
     TextView regles;
     Button btnRetour;
     String txtRegles;

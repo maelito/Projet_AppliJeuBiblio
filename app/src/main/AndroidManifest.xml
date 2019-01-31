@@ -9,13 +9,37 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Regles">
+        <activity android:name=".Menu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".Memory"
+            android:label="Memory">
+            android:parentActivityMain=".Menu">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Memory"/>
+        </activity>
+
+        <activity android:name=".Regles"
+            android:label="Regles">
+            android:parentActivityMain=".Menu">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Regles"/>
+        </activity>
+
+        <activity android:name=".Theme">
+            android:label="Theme"
+            android:parentActivityMain=".Menu">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Theme"/>
+        </activity>
+
     </application>
 
 </manifest>
