@@ -32,8 +32,8 @@
                 android:value=".Regles"/>
         </activity> -->
 
-        <activity android:name=".Theme">
-            android:label="Theme"
+        <activity android:name=".Theme"
+            android:label="Theme">
             <!--android:parentActivityMain=".Menu">-->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

@@ -1,5 +1,6 @@
 package com.example.mclement.applijeubiblio;
 
+import android.app.Activity;
 import android.app.AppComponentFactory;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,9 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class Regles extends AppCompatActivity {
-    
-    
+public class Regles extends Activity implements View.OnClickListener {
+
     
     TextView regles;
     Button btnRetour;
@@ -33,21 +33,21 @@ public class Regles extends AppCompatActivity {
 
         regles.setText(txtRegles);
 
-        bouton();
-
-    }
-    private void bouton()
-    {
         //bouton retour qui fait revenir a la page d'acceuil
         btnRetour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Menu.class);
-                startActivity(intent);
+                /*Intent intent = new Intent(getApplicationContext(), Menu.class);
+                startActivity(intent);*/
                 finish();
             }
         });
     }
 
+
+    @Override
+    public void onClick(View v) {
+
+    }
 
 }
