@@ -595,7 +595,7 @@ public class Memory extends AppCompatActivity {
 
     private void imgrsc()
     {
-        switch(theme) {
+        /*switch(theme) {
             case "tintin":
                 img0 = R.drawable.t1_0;
                 img1 = R.drawable.t1_1;
@@ -672,7 +672,7 @@ public class Memory extends AppCompatActivity {
                                 startActivity(intent);
                                 finish();
                             }
-                        });
+                        });*/
 
                 /*img0 = R.drawable.t4_0;
                 img1 = R.drawable.t4_1;
@@ -691,7 +691,7 @@ public class Memory extends AppCompatActivity {
                 img14 = R.drawable.t4_6_2;
                 img15 = R.drawable.t4_7_2;
                 img16 = R.drawable.t4_8_2;*/
-                break;
+                /*break;
 
             case "fairytail":
 
@@ -728,7 +728,7 @@ public class Memory extends AppCompatActivity {
                 img14 = R.drawable.t5_6_2;
                 img15 = R.drawable.t5_7_2;
                 img16 = R.drawable.t5_8_2;*/
-                break;
+                /*break;
 
             case "onepiece":
 
@@ -765,7 +765,7 @@ public class Memory extends AppCompatActivity {
                 img14 = R.drawable.t6_6_2;
                 img15 = R.drawable.t6_7_2;
                 img16 = R.drawable.t6_8_2;*/
-                break;
+                /*break;
 
             case "superman":
                 //On affiche une boite de dialogue annonçant que le theme n'est pas disponible
@@ -801,7 +801,7 @@ public class Memory extends AppCompatActivity {
                 img14 = R.drawable.t7_6_2;
                 img15 = R.drawable.t7_7_2;
                 img16 = R.drawable.t7_8_2;*/
-                break;
+                /*break;
 
             case "spiderman":
 
@@ -838,7 +838,7 @@ public class Memory extends AppCompatActivity {
                 img14 = R.drawable.t8_6_2;
                 img15 = R.drawable.t8_7_2;
                 img16 = R.drawable.t8_8_2;*/
-                break;
+                /*break;
 
             case "avengers":
 
@@ -875,8 +875,8 @@ public class Memory extends AppCompatActivity {
                 img14 = R.drawable.t9_6_2;
                 img15 = R.drawable.t9_7_2;
                 img16 = R.drawable.t9_8_2;*/
-                break;
-        }
+                /*break;
+        }*/
     }
 
     //définition des themes

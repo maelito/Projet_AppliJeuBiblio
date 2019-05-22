@@ -18,11 +18,11 @@
 
         <activity android:name=".Memory"
             android:label="Memory">
-            <!--android:parentActivityMain=".Menu">-->
+            android:parentActivityMain=".Menu">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Memory"/>
-        </activity> -->
+        </activity>
 
         <activity android:name=".Regles"
             android:label="Regles">

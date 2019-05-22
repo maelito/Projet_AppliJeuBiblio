@@ -31,11 +31,10 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="88dp"
         android:layout_marginEnd="8dp"
-        android:text="Renée la Bd"
+        android:text="Quizz"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPhrase" />
 
@@ -75,10 +74,10 @@
 
     <Button
         android:id="@+id/btnJeu2"
-        android:layout_width="368dp"
+        android:layout_width="372dp"
         android:layout_height="132dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="84dp"
         android:layout_marginEnd="8dp"
         android:text="Memory"
         android:textSize="30sp"

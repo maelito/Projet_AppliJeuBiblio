@@ -16,14 +16,13 @@ public class Menu extends Activity implements View.OnClickListener{
     private Button btnRegles;
     private EditText edtTxtPseudo;
     private String pseudo;
+    private String jeux;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         configBouttons();
-
-
     }
 
 
@@ -50,7 +49,7 @@ public class Menu extends Activity implements View.OnClickListener{
                             //on reviens au menu
                 }
                 else
-                { //on lance le jeu du mémory
+                { //on lance la page de thème du jeu du mémory
 
                     //Intent intent = new Intent(getApplicationContext(), Memory.class);
                     startActivity(new Intent(Menu.this, Theme.class));
@@ -68,13 +67,10 @@ public class Menu extends Activity implements View.OnClickListener{
             }
         });
 
-
-
-
     }
 
     @Override
     public void onClick(View v) {
-
+        pseudo = edtTxtPseudo.getText().toString();
     }
 }
