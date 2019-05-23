@@ -1,10 +1,7 @@
 package com.example.mclement.applijeubiblio;
 
 import android.app.Activity;
-import android.app.AppComponentFactory;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -24,7 +21,7 @@ public class Regles extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_regles);
 
         regles = (TextView) findViewById(R.id.txtRegles);
-        btnRetour = findViewById(R.id.retour);
+        btnRetour = findViewById(R.id.btnRetour);
         btnRegles2 = findViewById(R.id.btnSuivant);
 
         statutRegles = "memory";

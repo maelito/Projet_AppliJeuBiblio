@@ -9,7 +9,7 @@
 
 
     <Button
-        android:id="@+id/regles"
+        android:id="@+id/btnRegles"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_marginStart="8dp"
@@ -20,9 +20,9 @@
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/retour"
+        app:layout_constraintEnd_toStartOf="@+id/btnRetour"
         app:layout_constraintHorizontal_bias="0.517"
-        app:layout_constraintStart_toEndOf="@+id/reinitialiser"
+        app:layout_constraintStart_toEndOf="@+id/btnReinitialiser"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
@@ -286,7 +286,7 @@
         app:layout_constraintVertical_bias="0.416" />
 
     <Button
-        android:id="@+id/reinitialiser"
+        android:id="@+id/btnReinitialiser"
         android:layout_width="200dp"
         android:layout_height="80dp"
         android:layout_marginStart="16dp"
@@ -295,12 +295,12 @@
         android:text="Réinitialiser"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/retour"
+        app:layout_constraintEnd_toStartOf="@+id/btnRetour"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/retour"
+        android:id="@+id/btnRetour"
         android:layout_width="200dp"
         android:layout_height="80dp"
         android:layout_marginEnd="744dp"

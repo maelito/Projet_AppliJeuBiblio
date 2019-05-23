@@ -22,7 +22,7 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Memory"/>
-        </activity>
+        </activity>-->
 
         <activity android:name=".Regles"
             android:label="Regles">
@@ -38,6 +38,20 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Theme"/>
+        </activity> -->
+
+        <!--<activity android:name=".Menu"
+            android:label="Theme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Menu"/>
+        </activity> -->
+
+        <activity android:name=".Quizz"
+            android:label="Theme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Quizz"/>
         </activity> -->
 
     </application>

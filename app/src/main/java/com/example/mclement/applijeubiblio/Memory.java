@@ -1,7 +1,6 @@
 package com.example.mclement.applijeubiblio;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AlertDialog;
@@ -9,26 +8,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Random;
-import java.util.ArrayList;
-import java.util.List;
-
-import static java.lang.Math.floor;
 
 
-public class Memory extends AppCompatActivity {
+public class Memory extends AppCompatActivity implements View.OnClickListener {
 
     //Propriétés
 
-    private String theme = "tintin";
+    private String theme = "BD";
     private TextView nomJoueur;
     private int nbCoups = 0;
+    private String pseudo;
 
     //génération d'un chiffre aléatoire
     //Random rand = new Random();
@@ -53,14 +46,14 @@ public class Memory extends AppCompatActivity {
 
     @Override
     //sauvegarde l'instance
-    /*public void onSaveInstanceState(Bundle savedInstanceState) {
+    public void onSaveInstanceState(Bundle savedInstanceState) {
         //sauvegarde le nombre de coups
         savedInstanceState.putInt("monNbCoup", nbCoups);
         //sauvegarde les imagesViews et leur etat
         //
 
         super.onSaveInstanceState(savedInstanceState);
-    }*/
+    }
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,11 +114,12 @@ public class Memory extends AppCompatActivity {
         nomJoueur.setText("Mael");
 
         //bouttons
-        btnReinitialiser = findViewById(R.id.reinitialiser);
-        btnRetour = findViewById(R.id.retour);
+        btnReinitialiser = findViewById(R.id.btnReinitialiser);
+        btnRetour = findViewById(R.id.btnRetour);
 
         //instanciation du textView
         txtViewTheme = findViewById(R.id.theme);
+
         //On affiche le theme choisi dans le textView theme
         txtViewTheme.setText(theme);
 
@@ -279,6 +273,7 @@ public class Memory extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Memory.class);
+                intent.putExtra("pseudo",pseudo);
                 startActivity(intent);
                 finish();
             }
@@ -289,12 +284,17 @@ public class Memory extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Regles.class);
+                intent.putExtra("pseudo",pseudo);
                 startActivity(intent);
                 finish();
             }
         });
-
     }
+
+
+
+
+
 
     private void doStuff(ImageView imgView, int carte)
     {
@@ -389,6 +389,9 @@ public class Memory extends AppCompatActivity {
 
 
     }
+
+
+
 
 
     //Méthode
@@ -546,6 +549,11 @@ public class Memory extends AppCompatActivity {
 
     }
 
+
+
+
+
+
     private void endGame()
     {
         //Si toute les images sont invisibles
@@ -593,10 +601,15 @@ public class Memory extends AppCompatActivity {
         }
     }
 
+
+
+
+
+
     private void imgrsc()
     {
-        /*switch(theme) {
-            case "tintin":
+        switch(theme) {
+            case "BD":
                 img0 = R.drawable.t1_0;
                 img1 = R.drawable.t1_1;
                 img2 = R.drawable.t1_2;
@@ -616,7 +629,7 @@ public class Memory extends AppCompatActivity {
                 img16 = R.drawable.t1_8_2;
                 break;
 
-            case "titeuf":
+            /*case "titeuf":
                 //img0 = R.drawable.t2_0;
                 img1 = R.drawable.t2_1;
                 img2 = R.drawable.t2_2;
@@ -875,8 +888,18 @@ public class Memory extends AppCompatActivity {
                 img14 = R.drawable.t9_6_2;
                 img15 = R.drawable.t9_7_2;
                 img16 = R.drawable.t9_8_2;*/
-                /*break;
-        }*/
+                /*break;*/
+        }
+    }
+
+
+
+
+
+
+    @Override
+    public void onClick(View v) {
+
     }
 
     //définition des themes
