@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class Quizz extends AppCompatActivity implements View.OnClickListener {
+public class Quizz extends AppCompatActivity  {
 
     //
     private int score = 0;
@@ -14,6 +14,8 @@ public class Quizz extends AppCompatActivity implements View.OnClickListener {
     private Button btnRetour, btnReinitialiser, btnRegles;
 
     private String pseudo;
+    private String leChoixTheme;
+    private String jeux;
 
 
     @Override
@@ -34,18 +36,29 @@ public class Quizz extends AppCompatActivity implements View.OnClickListener {
     }
 
 
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quizz); //on assigne le layout memory_lanscape à l'activité
 
+
+        pseudo = this.getIntent().getExtras().getString("pseudo");
+        leChoixTheme = this.getIntent().getExtras().getString("theme");
+        jeux = this.getIntent().getExtras().getString("jeux");
+        boutons();
+
+    }
+
+    private void boutons()
+    {
         //boutons
-        //bouton retour qui fait revenir a la page d'acceuil
-        btnRetour.setOnClickListener(new View.OnClickListener() {
+        //bouton retour qui fait revenir a la page Theme
+/*        btnRetour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Theme.class);
                 intent.putExtra("pseudo", pseudo);
+                //intent.putExtra("theme", leChoixTheme);
+                intent.putExtra("jeux", jeux);
                 startActivity(intent);
 
             }
@@ -61,19 +74,16 @@ public class Quizz extends AppCompatActivity implements View.OnClickListener {
             }
         });
 
-        btnRegles.setOnClickListener(new View.OnClickListener()
+        //bouton pour réafficher les règles
+/*        btnRegles.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v)
             {
                 Intent unIntent = new Intent(getApplicationContext(), Regles.class);
-                //unIntent.putExtra("pseudo",pseudo);
+                unIntent.putExtra("pseudo",pseudo);
                 startActivity(unIntent);
             }
-        });
+        });*/
     }
 
-    @Override
-    public void onClick(View v) {
-
-    }
 }

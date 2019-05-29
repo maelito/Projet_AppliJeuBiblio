@@ -14,8 +14,11 @@ public class Theme extends Activity  {
     private Button btnTheme1;
     private Button btnTheme2;
     private Button btnTheme3;
-    private String leChooixTheme;
+    private Button btnRetour;
+    private String leChoixTheme;
     private String pseudo ;
+    private String jeux;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,43 +29,95 @@ public class Theme extends Activity  {
         btnTheme1 = (Button) findViewById(R.id.btnbd);
         btnTheme2 = (Button) findViewById(R.id.btnmanga);
         btnTheme3 = (Button) findViewById(R.id.btncomics);
+        btnRetour = (Button) findViewById(R.id.btnRetour);
         pseudo = this.getIntent().getExtras().getString("pseudo");
+        jeux = this.getIntent().getExtras().getString("jeux");
+        //jeux = "memory";
+        //jeux = "quizz";
         //choixTheme.setText(choixTheme.getText() + pseudo);
-
 
         //lancement du jeu
         btnTheme1.setOnClickListener(new View.OnClickListener()
         {
+            @Override
             public void onClick(View v)
             {
-                Intent unIntent = new Intent(Theme.this, Memory.class);
-                unIntent.putExtra("pseudo",pseudo);
-                startActivity(unIntent);
-                leChooixTheme = "bd";
+                if (jeux == "memory") { //on lance le jeu du memory si il on a appuyé sur le bouton memory
+                    Intent unIntent = new Intent(Theme.this, Memory.class);
+                    unIntent.putExtra("pseudo", pseudo);
+                    leChoixTheme = "bd";
+                    unIntent.putExtra("theme", leChoixTheme);
+                    unIntent.putExtra("jeux", jeux);
+                    startActivity(unIntent);
+                } else if(jeux == "quizz") //on lance le jeu du quizz dans l autre cas
+                {
+                    Intent unIntent = new Intent(Theme.this, Quizz.class);
+                    unIntent.putExtra("pseudo", pseudo);
+                    leChoixTheme = "bd";
+                    unIntent.putExtra("theme", leChoixTheme);
+                    unIntent.putExtra("jeux", jeux);
+                    startActivity(unIntent);
+                }
             }
         });
 
         btnTheme2.setOnClickListener(new View.OnClickListener()
         {
+            @Override
             public void onClick(View v)
             {
-                Intent unIntent = new Intent(Theme.this, Memory.class);
-                unIntent.putExtra("pseudo",pseudo);
-                startActivity(unIntent);
-                leChooixTheme = "manga";
+                if (jeux == "memory") { //on lance le jeu du memory si il on a appuyé sur le bouton memory
+                    Intent unIntent = new Intent(Theme.this, Memory.class);
+                    unIntent.putExtra("pseudo", pseudo);
+                    leChoixTheme = "manga";
+                    unIntent.putExtra("theme", leChoixTheme);
+                    unIntent.putExtra("jeux", jeux);
+                    startActivity(unIntent);
+                }else //on lance le jeu du quizz dans l autre cas
+                {
+                    Intent unIntent = new Intent(Theme.this, Quizz.class);
+                    unIntent.putExtra("pseudo", pseudo);
+                    leChoixTheme = "manga";
+                    unIntent.putExtra("theme", leChoixTheme);
+                    unIntent.putExtra("jeux", jeux);
+                    startActivity(unIntent);
+                }
             }
         });
 
         btnTheme3.setOnClickListener(new View.OnClickListener()
         {
+            @Override
             public void onClick(View v)
             {
-                Intent unIntent = new Intent(Theme.this, Memory.class);
-                unIntent.putExtra("pseudo",pseudo);
-                startActivity(unIntent);
-                leChooixTheme = "comics";
+                if (jeux == "memory") //on lance le jeu du memory si il on a appuyé sur le bouton memory
+                {
+                    Intent unIntent = new Intent(Theme.this, Memory.class);
+                    unIntent.putExtra("pseudo",pseudo);
+                    leChoixTheme = "comics";
+                    unIntent.putExtra("theme", leChoixTheme);
+                    unIntent.putExtra("jeux", jeux);
+                    startActivity(unIntent);
+                } else //on lance le jeu du quizz dans l autre cas
+                {
+                    Intent unIntent = new Intent(Theme.this, Quizz.class);
+                    unIntent.putExtra("pseudo", pseudo);
+                    leChoixTheme = "comics";
+                    unIntent.putExtra("theme", leChoixTheme);
+                    unIntent.putExtra("jeux", jeux);
+                    startActivity(unIntent);
+                }
             }
         });
+
+        btnRetour.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                finish();
+            }
+        });;
         
     }
 }

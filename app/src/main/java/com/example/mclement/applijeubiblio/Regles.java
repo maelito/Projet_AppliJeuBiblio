@@ -57,6 +57,7 @@ public class Regles extends Activity implements View.OnClickListener {
 
                     regles.setText(txtRegles);
                     statutRegles = "Quizz";
+                    btnRegles2.setText("Règles Memory");
                 }
                 else
                 {
@@ -68,6 +69,7 @@ public class Regles extends Activity implements View.OnClickListener {
 
                     regles.setText(txtRegles);
                     statutRegles = "memory";
+                    btnRegles2.setText("Règles Quizz");
                 }
             }
         });

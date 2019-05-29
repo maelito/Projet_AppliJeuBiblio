@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import org.w3c.dom.Text;
+
 public class Menu extends Activity {
 
     private Button btnMemory, btnQuizz;
@@ -15,6 +17,7 @@ public class Menu extends Activity {
     private EditText edtTxtPseudo;
     private String pseudo;
     private String jeux;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +39,7 @@ public class Menu extends Activity {
             public void onClick(View v) {
 
                 pseudo = edtTxtPseudo.getText().toString();
-
+                jeux = "memory";
                 if ( pseudo.equals("")) //on empeche le joueur de jouer si il n'a pas rentré de pseudo
                 {
                     //On affiche une boite de dialogue annonçant que le pseudo n'as pas été rentré
@@ -51,8 +54,10 @@ public class Menu extends Activity {
                 { //on lance la page de thème du jeu du mémory
 
                     //Intent intent = new Intent(getApplicationContext(), Memory.class);
+
                     Intent unIntent = new Intent(Menu.this, Theme.class);
                     unIntent.putExtra("pseudo",pseudo);
+                    unIntent.putExtra("jeux",jeux);
                     startActivity(unIntent);
                     //finish();
                 }
@@ -64,7 +69,7 @@ public class Menu extends Activity {
             public void onClick(View v) {
 
                 pseudo = edtTxtPseudo.getText().toString();
-
+                jeux = "quizz";
                 if ( pseudo.equals("")) //on empeche le joueur de jouer si il n'a pas rentré de pseudo
                 {
                     //On affiche une boite de dialogue annonçant que le pseudo n'as pas été rentré
@@ -76,11 +81,13 @@ public class Menu extends Activity {
                     //on reviens au menu
                 }
                 else
-                { //on lance la page de thème du jeu du mémory
+                { //on lance la page de thème du jeu du Quizz
 
                     //Intent intent = new Intent(getApplicationContext(), Memory.class);
+
                     Intent unIntent = new Intent(Menu.this, Theme.class);
                     unIntent.putExtra("pseudo",pseudo);
+                    unIntent.putExtra("jeux",jeux);
                     startActivity(unIntent);
                     //finish();
                 }

@@ -18,10 +18,11 @@ public class Memory extends AppCompatActivity implements View.OnClickListener {
 
     //Propriétés
 
-    private String theme = "BD";
+    private String theme;
     private TextView nomJoueur;
     private int nbCoups = 0;
     private String pseudo;
+    private String jeux;
 
     //génération d'un chiffre aléatoire
     //Random rand = new Random();
@@ -59,6 +60,10 @@ public class Memory extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memory); //on assigne le layout memory_lanscape à l'activité
+
+        pseudo = this.getIntent().getExtras().getString("pseudo");
+        theme = this.getIntent().getExtras().getString("theme");
+        jeux = this.getIntent().getExtras().getString("jeux");
 
         /*Bundle state = getIntent().getExtras();
         if(state != null)
@@ -111,7 +116,7 @@ public class Memory extends AppCompatActivity implements View.OnClickListener {
 
         //nom joueur
         nomJoueur = findViewById(R.id.PlayerName);
-        nomJoueur.setText("Mael");
+        nomJoueur.setText(pseudo);
 
         //bouttons
         btnReinitialiser = findViewById(R.id.btnReinitialiser);
@@ -262,7 +267,9 @@ public class Memory extends AppCompatActivity implements View.OnClickListener {
         btnRetour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Menu.class);
+                Intent intent = new Intent(getApplicationContext(), Theme.class);
+                intent.putExtra("pseudo",pseudo);
+                intent.putExtra("jeux", jeux);
                 startActivity(intent);
                 finish();
             }
@@ -274,21 +281,24 @@ public class Memory extends AppCompatActivity implements View.OnClickListener {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Memory.class);
                 intent.putExtra("pseudo",pseudo);
+                intent.putExtra("theme", theme);
+                intent.putExtra("jeux", jeux);
                 startActivity(intent);
                 finish();
             }
         });
 
         //bouton du rappel des règles
-        btnRegles.setOnClickListener(new View.OnClickListener() {
+/*        btnRegles.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Regles.class);
                 intent.putExtra("pseudo",pseudo);
+                intent.putExtra("theme", leChoixTheme);
                 startActivity(intent);
                 finish();
             }
-        });
+        });*/
     }
 
 
@@ -609,7 +619,7 @@ public class Memory extends AppCompatActivity implements View.OnClickListener {
     private void imgrsc()
     {
         switch(theme) {
-            case "BD":
+            case "bd":
                 img0 = R.drawable.t1_0;
                 img1 = R.drawable.t1_1;
                 img2 = R.drawable.t1_2;
@@ -629,7 +639,7 @@ public class Memory extends AppCompatActivity implements View.OnClickListener {
                 img16 = R.drawable.t1_8_2;
                 break;
 
-            /*case "titeuf":
+            case "manga":
                 //img0 = R.drawable.t2_0;
                 img1 = R.drawable.t2_1;
                 img2 = R.drawable.t2_2;
@@ -649,7 +659,7 @@ public class Memory extends AppCompatActivity implements View.OnClickListener {
                 img16 = R.drawable.t2_8_2;
                 break;
 
-            case "simpson":
+            case "comics":
                 img0 = R.drawable.t3_0;
                 img1 = R.drawable.t3_1;
                 img2 = R.drawable.t3_2;
@@ -669,7 +679,7 @@ public class Memory extends AppCompatActivity implements View.OnClickListener {
                 img16 = R.drawable.t3_8_2;
                 break;
 
-            case "naruto":
+            /*case "naruto":
 
                 //On affiche une boite de dialogue annonçant que le theme n'est pas disponible
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(Memory.this);
